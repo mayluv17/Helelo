@@ -1,6 +1,10 @@
 import React from "react";
 
+import { useSelector } from "react-redux";
+
 export default function Header() {
+  const favorites = useSelector((state) => state.fav);
+
   return (
     <header className="py-4 shadow-sm bg-white">
       <div className="container flex items-center justify-between">
@@ -34,7 +38,7 @@ export default function Header() {
             </div>
             <div className="text-xs leading-3">Wishlist</div>
             <div className="absolute right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-              8
+              {favorites.length}
             </div>
           </a>
           <a
