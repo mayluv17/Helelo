@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-export default function ({ productDetails, handleFav }) {
+export default function ({ productDetails, handleFav, isFavorite }) {
+  const isFavoriteUi = isFavorite ? "bg-primary" : "";
   return (
     <>
       <div className="bg-white shadow rounded overflow-hidden group">
@@ -26,9 +27,8 @@ export default function ({ productDetails, handleFav }) {
               <i className="fa-solid fa-magnifying-glass"></i>
             </a>
             <a
-              href="#"
               onClick={() => handleFav(productDetails.id)}
-              className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+              className={`${isFavoriteUi} text-white text-lg w-9 h-8 rounded-full flex items-center justify-center hover:bg-gray-800 transition`}
               title="add to wishlist"
             >
               <i className="fa-solid fa-heart"></i>

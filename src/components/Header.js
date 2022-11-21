@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 export default function Header() {
-  const favorites = useSelector((state) => state.fav);
+  const favorites = useSelector((state) => state.fav.value);
 
   return (
     <header className="py-4 shadow-sm bg-white">

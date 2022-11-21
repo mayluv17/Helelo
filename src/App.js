@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addFav } from "./features/cart/favoriteSlice";
+import { addFave, removeFav } from "./features/cart/favoriteSlice";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -9,28 +9,25 @@ import Product from "./components/Product.js";
 import "./main.css";
 
 function App() {
-  const favSelector = useSelector((state) => state.fav);
+  const favSelector = useSelector((state) => state.fav.value);
   const dispatch = useDispatch();
 
-  const todos = useSelector((state) => state.todos);
-
   const [allProducts, setAllProducts] = useState([]);
-  const [favProducts, setFavProducts] = useState(favSelector);
+  const favProducts = favSelector;
+  // const [favProducts, setFavProducts] = useState([]);
 
   function handleFav(productId) {
-    console.log(productId);
-    if (favProducts.includes(productId)) {
-      const newFav = favProducts.filter((pid) => {
-        return pid === productId;
-      });
-
-      setFavProducts(newFav);
-      dispatch(addFav(setFavProducts));
+    if (favProducts && favProducts.includes(productId)) {
+      dispatch(removeFav(productId));
     } else {
-      setFavProducts((oldFav) => [...oldFav, productId]);
-      dispatch(addFav(productId));
+      dispatch(addFave(productId));
     }
   }
+
+  function ifIsFavorite(productId) {
+    favSelector.some();
+  }
+
   async function getAllproducts() {
     const res = await fetch("https://fakestoreapi.com/products/");
     const data = await res.json();
@@ -40,8 +37,14 @@ function App() {
   useEffect(() => {
     getAllproducts();
   }, []);
+
   const productComponent = allProducts.map((data, index) => (
-    <Product key={index} handleFav={handleFav} productDetails={data} />
+    <Product
+      key={index}
+      isFavorite={favProducts.includes(data.id)}
+      handleFav={handleFav}
+      productDetails={data}
+    />
   ));
 
   return (

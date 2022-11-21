@@ -2,13 +2,24 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const removeFavSlice = createSlice({
   name: "removeFav",
-  initialState: [1],
+  initialState: {
+    value: [0],
+  },
   reducers: {
     removeFav: (state, action) => {
+      //process and maipulate the data here
       const fav = action.payload;
+      state.value.includes(fav)
+        ? (state.value = state.value.filter((item) => item != fav))
+        : console.error("Item not in favorites");
 
-      //   state.push(fav);
-      return [fav];
+      // return [sfav];
+    },
+    addFav: (state, action) => {
+      const fav = action.payload;
+      !state.value.includes(fav)
+        ? console.error("Item not in favorites")
+        : state.value.push(fav);
     },
   },
 });
