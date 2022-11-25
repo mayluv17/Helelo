@@ -1,8 +1,20 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
-export default function ({ productDetails, handleFav, isFavorite }) {
+export default function ({
+  productDetails,
+  handleFav,
+  isFavorite,
+  toggleCart,
+}) {
+  const cart = useSelector((state) => state.cart.value);
+
   const isFavoriteUi = isFavorite ? "bg-primary" : "";
+  //check if product is in cart
+  const cartExist = cart.some((cartItem) => {
+    return cartItem.id === productDetails.id;
+  });
+
   return (
     <>
       <div className="bg-white shadow rounded overflow-hidden group">
@@ -11,10 +23,6 @@ export default function ({ productDetails, handleFav, isFavorite }) {
             className="w-full prod-img"
             style={{ backgroundImage: `url("${productDetails.image}")` }}
           ></div>
-          {/* <img
-            src={productDetails.image}
-            alt="product 1"
-          /> */}
           <div
             className="absolute inset-0 bg-black bg-opacity-40 flex items-center 
                     justify-center gap-2 opacity-0 group-hover:opacity-100 transition"
@@ -72,11 +80,15 @@ export default function ({ productDetails, handleFav, isFavorite }) {
             </div>
           </div>
         </div>
+
         <button
+          onClick={() => toggleCart(productDetails)}
           href="#"
-          className="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition"
+          className={`block w-full py-1 text-center text-white  border ${
+            cartExist ? "bg-transparent text-primary" : "bg-primary"
+          } border-primary rounded-b hover:bg-transparent hover:text-primary transition`}
         >
-          Add to cart
+          {cartExist ? "Remove from Cart" : "Add to cart"}
         </button>
       </div>
     </>

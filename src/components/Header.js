@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 export default function Header() {
   const favorites = useSelector((state) => state.fav.value);
+  const cart = useSelector((state) => state.cart.value);
 
   return (
     <header className="py-4 shadow-sm bg-white">
@@ -50,7 +51,7 @@ export default function Header() {
             </div>
             <div className="text-xs leading-3">Cart</div>
             <div className="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-              2
+              {cart.length}
             </div>
           </a>
           <a

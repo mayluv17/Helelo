@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addFave, removeFav } from "./features/cart/favoriteSlice";
+import { cartAction } from "./features/cart/cartSlice";
+import { v4 as uuidv4 } from "uuid";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -13,8 +15,9 @@ function App() {
   const dispatch = useDispatch();
 
   const [allProducts, setAllProducts] = useState([]);
+
+  //initiate favorite state from redux
   const favProducts = favSelector;
-  // const [favProducts, setFavProducts] = useState([]);
 
   function handleFav(productId) {
     if (favProducts && favProducts.includes(productId)) {
@@ -24,14 +27,13 @@ function App() {
     }
   }
 
-  function ifIsFavorite(productId) {
-    favSelector.some();
+  function toggleCart(productData) {
+    dispatch(cartAction(productData));
   }
 
   async function getAllproducts() {
     const res = await fetch("https://fakestoreapi.com/products/");
     const data = await res.json();
-    // console.log(data);
     setAllProducts(data);
   }
   useEffect(() => {
@@ -41,6 +43,7 @@ function App() {
   const productComponent = allProducts.map((data, index) => (
     <Product
       key={index}
+      toggleCart={toggleCart}
       isFavorite={favProducts.includes(data.id)}
       handleFav={handleFav}
       productDetails={data}
