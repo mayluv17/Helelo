@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/helelo/static/css/main.acba0519.css",
-    "main.js": "/helelo/static/js/main.188088fe.js",
+    "main.js": "/helelo/static/js/main.f2895f25.js",
     "static/js/787.84fe658f.chunk.js": "/helelo/static/js/787.84fe658f.chunk.js",
     "static/media/banner-bg.jpg": "/helelo/static/media/banner-bg.6fc6d1966582d04d3f4f.jpg",
     "static/media/service-hours.svg": "/helelo/static/media/service-hours.07b913a28fa3a284029fee66f6c26be2.svg",
@@ -10,11 +10,11 @@
     "static/media/delivery-van.svg": "/helelo/static/media/delivery-van.0a2a400613e0de5acbd7514909be5545.svg",
     "index.html": "/helelo/index.html",
     "main.acba0519.css.map": "/helelo/static/css/main.acba0519.css.map",
-    "main.188088fe.js.map": "/helelo/static/js/main.188088fe.js.map",
+    "main.f2895f25.js.map": "/helelo/static/js/main.f2895f25.js.map",
     "787.84fe658f.chunk.js.map": "/helelo/static/js/787.84fe658f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.acba0519.css",
-    "static/js/main.188088fe.js"
+    "static/js/main.f2895f25.js"
   ]
 }
