@@ -10,9 +10,9 @@ export default function Header() {
   return (
     <header className="py-4 shadow-sm bg-white">
       <div className="container flex items-center justify-between">
-        <a href="/">
+        <Link to="/">
           <img src={logo} alt="Logo" className="w-32" />
-        </a>
+        </Link>
 
         <div className="w-full max-w-xl relative flex">
           <span className="absolute left-4 top-3 text-lg text-gray-400">
