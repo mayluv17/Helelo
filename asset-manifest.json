@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Helelo/static/css/main.acba0519.css",
-    "main.js": "/Helelo/static/js/main.a3c012cd.js",
+    "main.js": "/Helelo/static/js/main.5544d770.js",
     "static/js/787.84fe658f.chunk.js": "/Helelo/static/js/787.84fe658f.chunk.js",
     "static/media/banner-bg.jpg": "/Helelo/static/media/banner-bg.6fc6d1966582d04d3f4f.jpg",
     "static/media/service-hours.svg": "/Helelo/static/media/service-hours.07b913a28fa3a284029fee66f6c26be2.svg",
@@ -10,11 +10,11 @@
     "static/media/delivery-van.svg": "/Helelo/static/media/delivery-van.0a2a400613e0de5acbd7514909be5545.svg",
     "index.html": "/Helelo/index.html",
     "main.acba0519.css.map": "/Helelo/static/css/main.acba0519.css.map",
-    "main.a3c012cd.js.map": "/Helelo/static/js/main.a3c012cd.js.map",
+    "main.5544d770.js.map": "/Helelo/static/js/main.5544d770.js.map",
     "787.84fe658f.chunk.js.map": "/Helelo/static/js/787.84fe658f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.acba0519.css",
-    "static/js/main.a3c012cd.js"
+    "static/js/main.5544d770.js"
   ]
 }
