@@ -1,6 +1,7 @@
 import React from "react";
-
+import logo from "../assets/images/logo.svg";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const favorites = useSelector((state) => state.fav.value);
@@ -9,8 +10,8 @@ export default function Header() {
   return (
     <header className="py-4 shadow-sm bg-white">
       <div className="container flex items-center justify-between">
-        <a href="index.html">
-          <img src="assets/images/logo.svg" alt="Logo" className="w-32" />
+        <a href="/">
+          <img src={logo} alt="Logo" className="w-32" />
         </a>
 
         <div className="w-full max-w-xl relative flex">
@@ -30,8 +31,8 @@ export default function Header() {
         </div>
 
         <div className="flex items-center space-x-4">
-          <a
-            href="#"
+          <Link
+            to={`wishlist`}
             className="text-center text-gray-700 hover:text-primary transition relative"
           >
             <div className="text-2xl">
@@ -41,9 +42,9 @@ export default function Header() {
             <div className="absolute right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
               {favorites.length}
             </div>
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="cart"
             className="text-center text-gray-700 hover:text-primary transition relative"
           >
             <div className="text-2xl">
@@ -53,11 +54,8 @@ export default function Header() {
             <div className="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
               {cart.length}
             </div>
-          </a>
-          <a
-            href="#"
-            className="text-center text-gray-700 hover:text-primary transition relative"
-          >
+          </Link>
+          <a className="text-center text-gray-700 hover:text-primary transition relative">
             <div className="text-2xl">
               <i className="fa-regular fa-user"></i>
             </div>

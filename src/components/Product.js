@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-export default function ({
+export default function Product({
   productDetails,
   handleFav,
   isFavorite,
   toggleCart,
 }) {
+  //initiate favorite state from redux
   const cart = useSelector((state) => state.cart.value);
-
   const isFavoriteUi = isFavorite ? "bg-primary" : "";
+
   //check if product is in cart
   const cartExist = cart.some((cartItem) => {
     return cartItem.id === productDetails.id;
@@ -24,19 +26,12 @@ export default function ({
             style={{ backgroundImage: `url("${productDetails.image}")` }}
           ></div>
           <div
-            className="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition"
+            className="absolute inset-0 bg-black bg-opacity-40 flex items-top 
+                    justify-right gap-2 opacity-0 group-hover:opacity-100 transition"
           >
             <a
-              href="#"
-              className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-              title="view product"
-            >
-              <i className="fa-solid fa-magnifying-glass"></i>
-            </a>
-            <a
-              onClick={() => handleFav(productDetails.id)}
-              className={`${isFavoriteUi} text-white text-lg w-9 h-8 rounded-full flex items-center justify-center hover:bg-gray-800 transition`}
+              onClick={() => handleFav(productDetails)}
+              className={`${isFavoriteUi} ml-2 mt-2 text-white text-lg w-9 h-8 rounded-full flex items-center justify-center hover:bg-red-800 transition`}
               title="add to wishlist"
             >
               <i className="fa-solid fa-heart"></i>
@@ -44,11 +39,11 @@ export default function ({
           </div>
         </div>
         <div className="pt-4 pb-3 px-4">
-          <a href="#">
+          <Link to={`product/${productDetails.id}`}>
             <h4 className="font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
               {productDetails.title.substr(0, 20)}...
             </h4>
-          </a>
+          </Link>
           <div className="flex items-baseline mb-1 space-x-2">
             <p className="text-xl text-primary font-semibold">
               ${productDetails.price}
@@ -83,7 +78,6 @@ export default function ({
 
         <button
           onClick={() => toggleCart(productDetails)}
-          href="#"
           className={`block w-full py-1 text-center text-white  border ${
             cartExist ? "bg-transparent text-primary" : "bg-primary"
           } border-primary rounded-b hover:bg-transparent hover:text-primary transition`}
