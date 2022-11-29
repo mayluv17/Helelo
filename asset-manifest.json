@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Helelo/static/css/main.acba0519.css",
-    "main.js": "/Helelo/static/js/main.5544d770.js",
-    "static/js/787.84fe658f.chunk.js": "/Helelo/static/js/787.84fe658f.chunk.js",
-    "static/media/banner-bg.jpg": "/Helelo/static/media/banner-bg.6fc6d1966582d04d3f4f.jpg",
-    "static/media/service-hours.svg": "/Helelo/static/media/service-hours.07b913a28fa3a284029fee66f6c26be2.svg",
-    "static/media/money-back.svg": "/Helelo/static/media/money-back.04083a8134c1ed01133d6a731777bdaa.svg",
-    "static/media/logo.svg": "/Helelo/static/media/logo.97effb767ae2aa4386554873fe426ae5.svg",
-    "static/media/delivery-van.svg": "/Helelo/static/media/delivery-van.0a2a400613e0de5acbd7514909be5545.svg",
-    "index.html": "/Helelo/index.html",
-    "main.acba0519.css.map": "/Helelo/static/css/main.acba0519.css.map",
-    "main.5544d770.js.map": "/Helelo/static/js/main.5544d770.js.map",
-    "787.84fe658f.chunk.js.map": "/Helelo/static/js/787.84fe658f.chunk.js.map"
+    "main.css": "/helelo/static/css/main.acba0519.css",
+    "main.js": "/helelo/static/js/main.188088fe.js",
+    "static/js/787.84fe658f.chunk.js": "/helelo/static/js/787.84fe658f.chunk.js",
+    "static/media/banner-bg.jpg": "/helelo/static/media/banner-bg.6fc6d1966582d04d3f4f.jpg",
+    "static/media/service-hours.svg": "/helelo/static/media/service-hours.07b913a28fa3a284029fee66f6c26be2.svg",
+    "static/media/money-back.svg": "/helelo/static/media/money-back.04083a8134c1ed01133d6a731777bdaa.svg",
+    "static/media/logo.svg": "/helelo/static/media/logo.97effb767ae2aa4386554873fe426ae5.svg",
+    "static/media/delivery-van.svg": "/helelo/static/media/delivery-van.0a2a400613e0de5acbd7514909be5545.svg",
+    "index.html": "/helelo/index.html",
+    "main.acba0519.css.map": "/helelo/static/css/main.acba0519.css.map",
+    "main.188088fe.js.map": "/helelo/static/js/main.188088fe.js.map",
+    "787.84fe658f.chunk.js.map": "/helelo/static/js/787.84fe658f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.acba0519.css",
-    "static/js/main.5544d770.js"
+    "static/js/main.188088fe.js"
   ]
 }
